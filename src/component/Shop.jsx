@@ -8,6 +8,7 @@ const Shop = () => {
   return (
     <div>
       <h2>Flipkart</h2>
+      <h3>Total sell : {shopState.totalSell}</h3>
       <div>Shirt :- {shopState.shirt}</div>
       <div>jean :- {shopState.jean}</div>
     </div>

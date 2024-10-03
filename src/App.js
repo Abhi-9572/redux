@@ -13,6 +13,7 @@ function App() {
         REDUX IMPLIMENTATION
         <Shop />
         <Buy />
+        <br/>
         <Return />
       </div>
     </Provider>

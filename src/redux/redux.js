@@ -1,21 +1,37 @@
-import {createStore} from 'redux'
+import { act } from 'react';
+import {createStore} from 'redux' // this is depreacated now we will use redux toolkit
 // action creator
 
-export const buyShirt = () => {
+export const buyShirt = (price) => {
   return {
     type: "buy-a-shirt",
+    payload:price
   };
 };
 
-export const returShirt = () => {
+export const returShirt = (price) => {
   return {
     type: "return-a-shirt",
+    payload:price
+  };
+};
+
+export const buyJean = () => {
+  return {
+    type: "buy-a-jean",
+  };
+};
+
+export const returJean = () => {
+  return {
+    type: "return-a-jean",
   };
 };
 
  const initialShopState = {
   shirt: 100,
   jean: 100,
+  totalSell:0
 };
 
 export const shirtReducer = (state = initialShopState, action) => {
@@ -23,11 +39,25 @@ export const shirtReducer = (state = initialShopState, action) => {
     return {
       ...state,
       shirt: state.shirt - 1,
+      totalSell:state.totalSell+action.payload
     };
   } else if (action.type === "return-a-shirt") {
     return {
       ...state,
       shirt: state.shirt + 1,
+      totalSell:state.totalSell-action.payload
+    };
+  }
+  else if (action.type === "buy-a-jean") {
+    return {
+      ...state,
+      jean: state.jean - 1,
+    };
+  }
+  else if (action.type === "return-a-jean") {
+    return {
+      ...state,
+      jean: state.jean + 1,
     };
   }
   return state
