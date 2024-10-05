@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 const Shop = () => {
   const shopState = useSelector((state) => state); // give the selected value form state ( allow you to select value)
 
-  console.log(shopState); // {shirt: , jean:}
+  console.log(shopState); // {shirt: , jean: ,totalSell: }
   return (
     <div>
       <h2>Flipkart</h2>
