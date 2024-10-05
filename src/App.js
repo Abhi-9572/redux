@@ -4,11 +4,11 @@ import Shop from "./component/Shop";
 import Buy from "./component/Buy";
 import Return from "./component/Return";
 import { Provider } from "react-redux";
-import { store } from "./redux/redux";
+// import { store } from "./redux/redux";
 import ShirtShop from "./redux/shirt/ShirtShop";
-import { shirtStore } from "./redux/shirt/shirtStore";
-
+import {store} from './redux/store'
 function App() {
+  
   return (
     // all the file is in same file
 
@@ -23,7 +23,8 @@ function App() {
     // </Provider>
 
     // all file is in different file
-    <Provider store={shirtStore}>
+
+    <Provider store={store}>
       <div className="App">
         REDUX IMPLIMENTATION
         <ShirtShop/>
